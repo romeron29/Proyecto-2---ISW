@@ -32,7 +32,7 @@ namespace JuegoTurno.Model
             Habilidades = habilidades;
             
         }
-
+        public string Nombre { get { return nombre; } }
         // Métodos abstractos que deben ser implementados por las subclases
         public abstract void Atacar(Personaje enemigo);
         public abstract void Defender();

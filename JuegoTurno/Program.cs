@@ -1,5 +1,6 @@
 ﻿using JuegoTurno.Model;
 using System.Collections;
+using System.Reflection.PortableExecutable;
 
 namespace JuegoTurno
 {
@@ -7,12 +8,15 @@ namespace JuegoTurno
     {
 
 
-        private static ArrayList ArrayPersonajes = new ArrayList();
+        private static List<Personaje> ListaPersonajes = new List<Personaje>();
+        private static Personaje JugadorUno; 
+        private static Personaje JugadorDos;
         static void Main(string[] args)
         {
-            //ejecutarMenu();
             crearPersonajes();
+            ejecutarMenu();
 
+            
         }
         private static void crearPersonajes()
         {
@@ -46,9 +50,13 @@ namespace JuegoTurno
             habilidadesPersonaje = new List<Habilidad> { Flecha, FlechaTripls };
             Arquero arquero = new Arquero("Legolas", 90, 60, 18, 8, habilidadesPersonaje, Orco, 25);
 
-            Console.WriteLine( caballero.MostrarEstado());
-            Console.WriteLine( hechicero.MostrarEstado());
-            Console.WriteLine( arquero.MostrarEstado());
+            ListaPersonajes.Add(caballero);
+            ListaPersonajes.Add(hechicero);
+            ListaPersonajes.Add(arquero);
+
+            //Console.WriteLine( caballero.MostrarEstado());
+            //Console.WriteLine( hechicero.MostrarEstado());
+            //Console.WriteLine( arquero.MostrarEstado());
         }
 
         private void Jugar()
@@ -60,8 +68,11 @@ namespace JuegoTurno
 
         }
 
-        private static List<string> mostrarPersonajes() {
-            return new List<string> { "Guerrero", "Mago", "Arquero" };
+        private static void mostrarPersonajes() {
+            foreach (Personaje item in ListaPersonajes)
+            {
+                Console.WriteLine(item.Nombre);
+            }
         }
         private static void mostrarCabeceraMenu(string tituloCabecera)
         {
@@ -84,9 +95,10 @@ namespace JuegoTurno
         {
             mostrarCabeceraMenu("Seleccion de Personaje");
             int opcion = 1;
-            List<string> person = mostrarPersonajes();
-            foreach(String per in person){
-                Console.WriteLine($"{opcion}. {per}");
+            
+            foreach(Personaje per in ListaPersonajes)
+            {
+                Console.WriteLine($"{opcion}. {per.Nombre}");
                 opcion++;
             }
             Console.WriteLine($"{opcion}. Volver al menú principal");
@@ -149,7 +161,31 @@ namespace JuegoTurno
             }
         }
 
+        private static void seleccionarPersonaje(ref Personaje jugador)
+        {
+            while (true)
+            {
+
+                menuPersonajes();
+                int opcion = validarEntrada(menuPersonajes);
+                if (opcion >= 1 && opcion <= ListaPersonajes.Count)
+                {
+                    jugador = ListaPersonajes[opcion - 1];
+                    Console.WriteLine($"Has seleccionado a {jugador.Nombre}.\n\n");
+                    break;
+                }
+                else if (opcion == ListaPersonajes.Count + 1)
+                {
+                    // Volver al menú principal
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Opción no válida. Inténtelo de nuevo. \n\n");
+                }
+            }
 
 
+        }
     }
 }
