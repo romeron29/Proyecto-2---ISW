@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JuegoTurno.Interface
 {
-    internal class IHabilidad
+    public interface IHabilidad
     {
     public void UsarHabilidad() { }
     }
