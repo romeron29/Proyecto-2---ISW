@@ -15,16 +15,17 @@ namespace JuegoTurno.Model
         public int energiaBase { get; set; }
         public int ataqueBase { get; set; }
         public int escudoBase { get; set; }
-        public List<Habilidad> HabilidadesIniciales { get; set; } = new List<Habilidad>();
+        public Habilidad HabilidadUnica { get; set; }
 
-        public Raza(string nombre, int vidaBase, int energiaBase, int ataqueBase, int escudoBase, List<Habilidad> habilidadesIniciales)
+        public Raza(string nombre, Habilidad habilidadUnica )
         {
             this.nombre = nombre;
-            this.vidaBase = vidaBase;
-            this.energiaBase = energiaBase;
-            this.ataqueBase = ataqueBase;
-            this.escudoBase = escudoBase;
-            HabilidadesIniciales = habilidadesIniciales ?? new List<Habilidad>();
+            this.HabilidadUnica = habilidadUnica;
+            this.vidaBase = 100;
+            this.energiaBase = 100;
+            this.ataqueBase = 50;
+            this.escudoBase = 50;
+            
         }
 
         public override string ToString()

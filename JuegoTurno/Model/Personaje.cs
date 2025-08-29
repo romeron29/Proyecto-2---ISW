@@ -17,18 +17,19 @@ namespace JuegoTurno.Model
 
         // Propiedades públicas
         public Raza raza { get; set; }
-        public List<Habilidad> Habilidades { get; set; } = new List<Habilidad>();
+        public List<Habilidad> Habilidades { get; set; }
 
         // Constructor
         protected Personaje(string nombre, int vida, int energia, int ataque, int escudo, List<Habilidad> habilidades, Raza raza)
         {
-            this.nombre = nombre;
-            this.vida = vida;
-            this.energia = energia;
-            this.ataque = ataque;
-            this.escudo = escudo;
-            Habilidades = habilidades ?? new List<Habilidad>();
             this.raza = raza;
+            this.nombre = nombre ;
+            this.vida = vida + raza.vidaBase;
+            this.energia = energia +raza.energiaBase;
+            this.ataque = ataque + raza.ataqueBase;
+            this.escudo = escudo + raza.escudoBase;
+            Habilidades = habilidades;
+            
         }
 
         // Métodos abstractos que deben ser implementados por las subclases
@@ -39,9 +40,9 @@ namespace JuegoTurno.Model
         // Método virtual para aplicar daño
         public virtual void Danno(int cantidad)
         {
-            int dañoReal = Math.Max(0, cantidad - escudo);
-            vida -= dañoReal;
-            Console.WriteLine($"{nombre} recibió {dañoReal} de daño. Vida restante: {vida}");
+            int dannoReal = Math.Max(0, cantidad - escudo);
+            vida -= dannoReal;
+            Console.WriteLine($"{nombre} recibió {dannoReal} de daño. Vida restante: {vida}");
         }
 
         // Método para usar una habilidad
@@ -53,7 +54,12 @@ namespace JuegoTurno.Model
         // Mostrar estado actual del personaje
         public virtual string MostrarEstado()
         {
-            return $"{nombre} ({raza?.nombre}) - Vida: {vida}, Energía: {energia}, Ataque: {ataque}, Escudo: {escudo}";
+            string habilidades = "";
+            foreach (var habilidad in Habilidades)
+            {
+                habilidades += habilidad.ToString() + "\n";
+            }
+            return $"{nombre} ({raza?.nombre}) - Vida: {vida}, Energía: {energia}, Ataque: {ataque}, Escudo: {escudo}, Habilidades: {habilidades}";
         }
 
         // Representación textual

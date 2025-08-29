@@ -35,5 +35,9 @@ namespace JuegoTurno.Model
             vida += 12;
             Console.WriteLine($"{nombre} se recupera. Vida +12");
         }
+        public override string ToString()
+        {
+            return $" Fuerza: {Fuerza}, nombre: {nombre}, vida: {vida}, energia: {energia}";
+        }
     }
 }

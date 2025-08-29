@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JuegoTurno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+856f42554634b319f74e0c9f63fd4d42978ca307")]
 [assembly: System.Reflection.AssemblyProductAttribute("JuegoTurno")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JuegoTurno")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
