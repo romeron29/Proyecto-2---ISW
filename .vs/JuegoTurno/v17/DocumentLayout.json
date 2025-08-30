@@ -90,8 +90,7 @@
               "RelativeToolTip": "JuegoTurno\\Model\\Habilidad.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwBsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T07:00:42.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-29T07:00:42.608Z"
             },
             {
               "$type": "Document",
@@ -101,7 +100,7 @@
               "RelativeDocumentMoniker": "JuegoTurno\\Model\\Personaje.cs",
               "ToolTip": "C:\\Users\\romer\\OneDrive\\Documentos\\University\\2do Cuatri, 2025\\Week 6\\Classes\\JuegoTurno\\JuegoTurno\\Model\\Personaje.cs",
               "RelativeToolTip": "JuegoTurno\\Model\\Personaje.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwDAAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-29T07:00:16.547Z",
               "EditorCaption": ""
@@ -140,8 +139,7 @@
               "RelativeToolTip": "JuegoTurno\\Program.cs",
               "ViewState": "AgIAAKEAAAAAAAAAAAAuwKoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T06:34:43.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-29T06:34:43.695Z"
             }
           ]
         }
